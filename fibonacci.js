@@ -4,7 +4,7 @@ function fibonacciRecursion(x){
   if (x == 1) return [1];
   if (x == 2) return [1, 1];
   else {
-    var arr = fibonacciRecursion(x - 1);
+    let arr = fibonacciRecursion(x - 1);
     arr.push(arr[arr.length - 1] + arr[arr.length - 2]);
   }
   return arr;
