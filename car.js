@@ -62,8 +62,7 @@ class Car extends Vehicle {
     this.useFuel();
     this.y = this.y + this.step;
     return `Left: ${this.getCoords()} ${this.getFuel()}`;
-  }
-
+  }і
   moveRight() {
     if (!this.canMove()) return "can't move, there is no fuel"
     this.useFuel();

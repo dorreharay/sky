@@ -1,8 +1,12 @@
 function isEqual(answer){
-	answer = answer.split(' ')
-	first = +answer[0];
-	second = +answer[1];
-		
+	answer = answer.split('} ');
+	answer[0] = answer[0] + '}'
+	answer = answer
+		.map(item => item.replace(/(\w+:)|(\w+ :)/g, (s) => '"' + s.substring(0, s.length - 1) + '":'))
+		.map(item => JSON.parse(item))
+	let first = answer[0];
+	let second = answer[1];
+	
 	for(let key in first){
 		if(typeof first[key] === 'object'){
 			let firstInnerObj = first[key];
@@ -43,3 +47,4 @@ readline.question(`Input parameters: `, (answer) => {
   console.log(isEqual(answer));
   readline.close()
 })
+

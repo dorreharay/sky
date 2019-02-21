@@ -26,6 +26,6 @@ const readline = require('readline').createInterface({
 })
 
 readline.question(`Input parameter: `, (answer) => {
-  console.log(`Output: ${fibonacciLoop(answer).join()}`);
+  console.log(`Output: ${fibonacciRecursion(answer).join()}`);
   readline.close()
 })
