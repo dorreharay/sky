@@ -37,20 +37,6 @@ class Vehicle {
       this.x = this.x - this.step;
       return `Back: ${this.getCoords()} ${this.getFuel()}`;
    }
-
-    moveLeft() {
-      if (!this.canMove()) return "can't move, there is no fuel"
-      this.useFuel();
-      this.y = this.y - this.step;
-      return `Left: ${this.getCoords()} ${this.getFuel()}`;
-    }
-
-    moveRight() {
-      if (!this.canMove()) return "can't move, there is no fuel"
-      this.useFuel();
-      this.y = this.y + this.step;
-      return `Right: ${this.getCoords()} ${this.getFuel()}`;
-    }
  }
  
 class Car extends Vehicle {
@@ -71,6 +57,19 @@ class Car extends Vehicle {
     this.step = 1;
     return `Nitro is turned of and step is ${this.step}`;
   }
+  moveLeft() {
+    if (!this.canMove()) return "can't move, there is no fuel"
+    this.useFuel();
+    this.y = this.y + this.step;
+    return `Left: ${this.getCoords()} ${this.getFuel()}`;
+  }
+
+  moveRight() {
+    if (!this.canMove()) return "can't move, there is no fuel"
+    this.useFuel();
+    this.y = this.y - this.step;
+    return `Right: ${this.getCoords()} ${this.getFuel()}`;
+  }
 }
 
 const c = new Car('Porshe', 10);
@@ -78,5 +77,11 @@ const c = new Car('Porshe', 10);
 
 // test
 console.log(c.moveRight())
+console.log(c.moveRight())
 console.log(c.turnOnNitro())
 console.log(c.moveForward())
+console.log(c.moveForward())
+console.log(c.moveForward())
+console.log(c.turnOnNitro())
+console.log(c.moveForward())
+console.log(c.moveRight())

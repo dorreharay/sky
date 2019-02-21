@@ -1,12 +1,11 @@
-const compareBrackets = value => {
-  const arr = value.split('');
-  let counter = 0;
-  for (let i = 0; i < arr.length; i++) {
-    arr[i] === ')' ? counter-- : counter++;
-  }
-  return `Output: ${counter === 0 ? 'YES' : 'NO'}`;
-};
-
+function compareBrackets(str) {
+  let a = str, b;
+  while (a != b) (
+    b = a, 
+    a = a.replace(/\(\)/g, '')
+  )
+  return `Output: ${!a ? 'YES' : 'NO'}`
+}
 const readline = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout
